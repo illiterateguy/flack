@@ -1,2 +1,3 @@
-# flack
-Hi this is flack, a clone of slack based on javascript and flask
+# Project 2
+
+Web Programming with Python and JavaScript
