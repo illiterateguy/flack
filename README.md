@@ -1,3 +1,3 @@
-# Project 2
+# Flack
 
-Web Programming with Python and JavaScript
+A basic clone of slack having web-socket for communication, using flask-socket.io. this is mainly based on javascript as it is single page application. 
