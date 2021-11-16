@@ -193,15 +193,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
             console.log(data);
         if (!data.have_password)
-            {if (data.messages.length !== 0){
+        {
+            document.querySelector('#messagecontainer').innerHTML = "";
+            if (data.messages.length !== 0){
             // Update the messages
                 data.messages.forEach(message =>{
                 const contents = messagetemplate({'message_sender':message["sender"],'message_text':message["text"],'message_datetime':message["datetime"]}); 
                 document.querySelector('#messagecontainer').innerHTML += contents;
                 });
-            }
-            else{
-                document.querySelector('#messagecontainer').innerHTML = "";
             }
 
             // update the heading
@@ -218,16 +217,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 else
                 {
+                    document.querySelector('#messagecontainer').innerHTML = "";
                     if (data.messages.length !== 0){
                         // Update the messages
-                            data.messages.forEach(message =>{
-                            const contents = messagetemplate({'message_sender':message["sender"],'message_text':message["text"],'message_datetime':message["datetime"]}); 
-                            document.querySelector('#messagecontainer').innerHTML += contents;
-                            });
-                        }
-                    else{
-                            document.querySelector('#messagecontainer').innerHTML = "";
-                        }   
+                        data.messages.forEach(message =>{
+                        const contents = messagetemplate({'message_sender':message["sender"],'message_text':message["text"],'message_datetime':message["datetime"]}); 
+                        document.querySelector('#messagecontainer').innerHTML += contents;
+                        });
+                    }
                     
                     // update the heading
                     document.querySelector('#channelheading').innerHTML = channelname;
