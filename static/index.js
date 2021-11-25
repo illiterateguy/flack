@@ -245,6 +245,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const data1 = new FormData();
         data1.append('channelname',channelname);
         request.send(data1);
+        
 
     }
     };

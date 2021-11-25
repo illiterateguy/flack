@@ -66,6 +66,7 @@ def createchannel():
 @app.route("/getmessages", methods=["POST"])
 def getmessages():
     channelname = request.form.get('channelname')
+    print("messages are requested for channel : " + channelname)
     if channelname not in channels.keys():
         return jsonify({"channel_found":False})
     if (channels[channelname][0] != 'null'):
