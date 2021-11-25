@@ -81,6 +81,10 @@ def newmessage(data):
         channels[channelname][1].pop(0)
         emit("new message",{"channelname":channelname,"messagesfull":True,"sender":session["username"],"text":data["text"],"datetime":datetime.datetime.now().strftime("%c")},broadcast=True)
     else:
-         emit("new message",{"channelname":channelname,"messagesfull":False,"sender":session["username"],"text":data["text"],"datetime":datetime.datetime.now().strftime("%c")},broadcast=True)
+        emit("new message",{"channelname":channelname,"messagesfull":False,"sender":session["username"],"text":data["text"],"datetime":datetime.datetime.now().strftime("%c")},broadcast=True)
     channels[channelname][1].append({"sender":session["username"],"text":data["text"],"datetime":datetime.datetime.now().strftime("%c")})
-   
+    print("new message came : " + data["text"])
+
+@socketio.on("my event")
+def connect(message):
+    print(message["data"])
