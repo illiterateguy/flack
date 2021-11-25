@@ -58,7 +58,8 @@ def createchannel():
     #channelvar = channel(channelname,password)
     if channelname not in channels.keys():
         channels[channelname] = [password,[]]
-        print(len(channels))                                     #for debugging only
+        print(len(channels))
+        print("///////////////////////////////////" + channelname)                                     #for debugging only
         return jsonify({"success":True})                       
     else:
         return jsonify({"success":False})     
